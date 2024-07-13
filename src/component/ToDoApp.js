@@ -1,19 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const TodoApp = () => {
   const [todos, setTodos] = useState([]);
   const [inputValue, setInputValue] = useState('');
 
+  useEffect(() => {
+    const savedTodos = JSON.parse(localStorage.getItem('todos'));
+    if (savedTodos) {
+      setTodos(savedTodos);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
+
   const addTodo = () => {
+    console.log("Todos :", todos)
     if (inputValue.trim()) {
-      setTodos([...todos, { text: inputValue, completed: false }]);
+      setTodos([...todos, { text: inputValue, completed: false, time: new Date() }]);
       setInputValue('');
     }
   };
 
   const toggleComplete = (index) => {
     const newTodos = todos.map((todo, i) => {
-      return i === index ? { ...todo, completed: !todo.completed } : todo
+      return i === index ? { ...todo, completed: !todo.completed, time: new Date() } : todo
     }
     );
     setTodos(newTodos);
@@ -40,7 +52,7 @@ const TodoApp = () => {
               style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}
               onClick={() => toggleComplete(index)}
             >
-              {todo.text}
+              {todo?.text}
             </span>
             <button onClick={() => removeTodo(index)}>Remove</button>
           </li>
