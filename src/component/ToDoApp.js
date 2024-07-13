@@ -12,9 +12,9 @@ const TodoApp = () => {
   };
 
   const toggleComplete = (index) => {
-    const newTodos = todos.map((todo, i) =>{
-       return i === index ? { ...todo, completed: !todo.completed } : todo
-    }    
+    const newTodos = todos.map((todo, i) => {
+      return i === index ? { ...todo, completed: !todo.completed } : todo
+    }
     );
     setTodos(newTodos);
   };
