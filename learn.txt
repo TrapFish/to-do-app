@@ -1,0 +1,105 @@
+In React we have State which is handled by JS and UI which is managed by DOM 
+React is a Library. Difference between Library = no hard rule and have limited rules and Framework= Rules are scrict and it is a complete package
+
+Topic to Learn ::
+  . Core of React (state or UI Manipulation, JSX)
+  . Component Reusability
+  . Reusing the component props
+  . How to propagate changes (Hooks)
+
+Additional addon in React ::
+
+  . Router (React don't have router) react router dom
+  . state management(React don't have state Management)
+     - Redux, Redux Toolkit, context API
+  . class based component 
+     - legacy code
+  . BAAS apps(Backend as a service)
+     - social media clone , e-commerce apps
+
+After React ::
+  . React is not a complete solution in most cases
+     - no seo, browser Render of JS , no routing 
+
+  . Framework
+     - Next JS , Gatsby, Remix
+
+Tool  --  Node.js , React doc and visual studio
+
+git command
+---------------
+
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/TrapFish/to-do-app.git
+git push -u origin main
+
+
+npm -- npm (Node Package Manager)- node js friendly libraries 
+npx -- npx (Node Package Executer)- which wll execute directly these packages
+
+
+cerate project-- 1. (CRA) -- npx create-react-app app-name  (it will create the workspace and at the same time it will install also) --npm run start 
+                 2. (Vite) -- npm create vite@latest  (it give more control on the Code -- here in vite it will only create the workspace and installation is second step) -- npm run dev
+
+
+https://vitejs.dev/guide/
+
+
+= Understanding the react flow and structure.
+= Create own react library and JSX
+  JSX (JavaScript XML) is a syntax extension for JavaScript used in React to describe what the UI should look like. 
+  JSX allows you to write HTML-like syntax directly within JavaScript, making it easier to create and visualize the structure 
+  of React components. Under the hood, JSX is transpiled into regular JavaScript function calls, which then create and configure 
+  elements for the React virtual DOM.
+
+  ** Key Features of JSX
+
+
+  . HTML-Like Syntax: JSX allows you to write elements and components in a way that looks like HTML, making the code more readable and familiar to web developers.
+         const element = <h1>Hello, world!</h1>;
+
+  . Embedding Expressions: You can embed JavaScript expressions within JSX using curly braces {}
+        const name = 'John';
+        const element = <h1>Hello, {name}!</h1>;
+
+  . Attributes and Props: JSX allows you to pass attributes to elements and props to components.
+        const element = <img src="logo.png" alt="Logo" />;
+
+  . Children: Elements can have children, which can be other elements or components.
+       const element = (
+           <div>
+              <h1>Hello, world!</h1>
+              <p>This is a paragraph.</p>
+          </div>
+       );
+
+  . Components: You can use JSX to define and use components.
+      function Welcome(props) {
+          return <h1>Hello, {props.name}</h1>;
+      }
+
+      const element = <Welcome name="John" />;
+
+                                                                                                     
+ ** How JSX Works
+   JSX is not valid JavaScript by itself. Browsers don't understand it directly. Therefore, it needs to be transformed into regular JavaScript. 
+   This is typically done using tools like Babel.
+
+    For example, the following JSX:
+      const element = <h1>Hello, world!</h1>;
+  
+    is transformed into:
+      const element = React.createElement('h1', null, 'Hello, world!');
+
+  ** Advantages of Using JSX
+        - Readability: JSX syntax makes the code more readable and expressive.
+        - Developer Experience: It provides a way to write HTML and JavaScript together, which can be more intuitive for building user interfaces.
+        - Type-Safety: JSX syntax helps catch errors at compile-time rather than runtime.
+
+
+= Why you need hooks and project     
+
+   
